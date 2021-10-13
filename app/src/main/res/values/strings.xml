@@ -34,6 +34,7 @@
     <string name="mailmus">museum@gmail.com</string>
     <string name="sub">Apreciación</string>
     <string name="intro">Me gustaria realizar la siguiente apreciación:</string>
+    <string name="actua">Actualizar</string>
 
     <string name="helpfor">*Ingrese su usuario</string>
     <string name="helpforc">*Ingrese su nueva contraseña</string>
@@ -43,6 +44,10 @@
 
     <string name="scan">Escanea QR</string>
     <string name="listac">Lista completa</string>
+
+    <string name="tuc">Tu contraseña</string>
+    <string name="tue">Tu E-mail</string>
+    <string name="tuu">Tu Usuario</string>
 
 
 

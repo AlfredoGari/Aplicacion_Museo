@@ -57,8 +57,8 @@ class navigation_user : AppCompatActivity() {
 
             when(it.itemId){
 
-                R.id.nav_home ->replaceFragment(HomeFragment(), it.title.toString())
-                R.id.nav_fav ->replaceFragment(FavoriteFragment() , it.title.toString())
+                R.id.nav_home ->replaceFragment(HomeFragment(), it.title.toString(), persona)
+                R.id.nav_fav ->replaceFragment(FavoriteFragment() , it.title.toString(), persona)
                 R.id.nav_cs ->{
                     startActivity(abrir)
                     finish()
@@ -74,6 +74,9 @@ class navigation_user : AppCompatActivity() {
                 R.id.nav_qr ->{
                     initScanner()
                 }
+                R.id.nav_set->{
+                    replaceFragment(EditUsuarioFragment(), it.title.toString(), persona)
+                }
 
 
             }
@@ -82,7 +85,12 @@ class navigation_user : AppCompatActivity() {
 
     }
 
-    private fun replaceFragment(fragment: Fragment, title: String){
+    private fun replaceFragment(fragment: Fragment, title: String, persona: Usuario){
+        val bundle = Bundle()
+        bundle.putString("usuario", persona.usua.toString())
+        bundle.putString("contraseña", persona.contr.toString())
+        bundle.putString("email", persona.ema.toString())
+        fragment.arguments = bundle
         val fragmentManager = supportFragmentManager
         val fragmentTransaction= fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.framelayout, fragment)
