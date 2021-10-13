@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.museo.databinding.FragmentHomeBinding
 
@@ -33,6 +34,7 @@ class HomeFragment : Fragment() {
 
         }
         binding.list.setOnClickListener{
+
 
 
         }

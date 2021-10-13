@@ -14,6 +14,7 @@ import com.example.museo.databinding.ActivityCrearUsuarioBinding
 import com.example.museo.databinding.ActivityNavigationUserBinding
 import com.example.museo.databinding.ActivitySplashBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.zxing.integration.android.IntentIntegrator
 
 class navigation_user : AppCompatActivity() {
     lateinit var toogle: ActionBarDrawerToggle
@@ -70,6 +71,9 @@ class navigation_user : AppCompatActivity() {
                     intent.putExtra(Intent.EXTRA_TEXT, "Me gustaria realizar la siguiente apreciación:")
                     startActivity(intent)
                 }
+                R.id.nav_qr ->{
+                    initScanner()
+                }
 
 
             }
@@ -93,5 +97,31 @@ class navigation_user : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun initScanner(){
+       val integrator = IntentIntegrator(this)
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+        integrator.setPrompt("Escanea")
+        integrator.initiateScan()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
+        if(result != null){
+            if(result.contents ==null){
+
+            }else{
+                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
+            }
+
+        }else{
+
+            super.onActivityResult(requestCode, resultCode, data)
+
+        }
+
+
+
     }
 }
