@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_contrasena_fragments"
+    app:startDestination="@id/cambiarContraFragment">
+
+    <fragment
+        android:id="@+id/cambiarContraFragment"
+        android:name="com.example.museo.CambiarContraFragment"
+        android:label="CambiarContraFragment"
+        tools:layout="@layout/fragment_contrasena">
+        <action
+            android:id="@+id/action_cambiarContraFragment_to_confirmacionFragment"
+            app:destination="@id/confirmacionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmacionFragment"
+        android:name="com.example.museo.ConfirmacionFragment"
+        android:label="ConfirmacionFragment"
+        tools:layout="@layout/fragment_confirmacion"/>
+</navigation>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Museo</string>
+    <!-- Strings pantalla de logueo -->
+    <string name="usu">Usuario</string>
+    <string name="help">* Usuario requerido</string>
+    <string name="con">Contraseña</string>
+    <string name="help2">* Contraseña requerida</string>
+    <string name="ing">Ingresar</string>
+    <string name="info">¿No tienes usuario? Haz click aqui y crealo</string>
+    <string name="info2">¿Olvidaste tu contraseña? Haz click aqui</string>
+    <!-- Strings pantalla de formulario -->
+    <string name="form">FORMULARIO</string>
+    <string name="nya">Usuario</string>
+    <string name="email">E-mail</string>
+    <string name="usuarioinfo">* Ingresar nombre de usuario</string>
+    <string name="emailinfo">* Ingresar E-mail</string>
+    <string name="contrainfo">* Ingresar contraseña</string>
+    <string name="crearusu">Crear Usuario</string>
+    <string name="existe">Nombre de usuario ocupado, porfavor elija otro</string>
+    <string name="miss">Campo/s faltante/s</string>
+    <!-- Strings menu -->
+    <string name="inicio">Inicio</string>
+    <string name="fav">Favoritos</string>
+    <string name="send">Enviar E-mail</string>
+    <string name="set">Configuracion de usuario</string>
+    <string name="mus">Museo</string>
+    <string name="logout">Cerrar Sesión</string>
+
+    <!-- Necesario para el Navigation Drawer -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!-- Mandar mail -->
+    <string name="mailmus">museum@gmail.com</string>
+    <string name="sub">Apreciación</string>
+    <string name="intro">Me gustaria realizar la siguiente apreciación:</string>
+
+    <string name="helpfor">*Ingrese su usuario</string>
+    <string name="helpforc">*Ingrese su nueva contraseña</string>
+    <string name="ayuda">No hay problema, solo ingrese su Usuario y nueva contraseña</string>
+    <string name="change">Cambiar contraseña</string>
+    <string name="conn">Nueva contraseña</string>
+
+    <string name="scan">Escanea QR</string>
+    <string name="listac">Lista completa</string>
+
+
+
+</resources>

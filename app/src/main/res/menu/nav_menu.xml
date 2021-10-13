@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:id="@+id/nav_museo"
+        android:title="@string/mus"
+        android:icon="@drawable/mus"/>
+
+    <item android:id="@+id/nav_home"
+        android:title="@string/inicio"
+        android:icon="@drawable/home_item"/>
+
+    <item android:id="@+id/nav_fav"
+        android:title="@string/fav"
+        android:icon="@drawable/star_nav"/>
+
+    <item android:id="@+id/nav_set"
+        android:title="@string/set"
+        android:icon="@drawable/settings"/>
+
+
+    <item android:id="@+id/nav_ema"
+        android:title="@string/send"
+        android:icon="@drawable/email"/>
+
+    <item android:title="@string/logout">
+
+        <menu>
+
+            <item android:id="@+id/nav_cs"
+                android:title="@string/logout"
+                android:icon="@drawable/logout"/>
+
+        </menu>
+
+    </item>
+
+
+
+</menu>
