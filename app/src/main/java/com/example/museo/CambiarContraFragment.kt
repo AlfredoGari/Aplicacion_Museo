@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 
 class CambiarContraFragment: Fragment() {
 
@@ -26,7 +27,8 @@ class CambiarContraFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         myboton.setOnClickListener{
-
+            val directions = CambiarContraFragmentDirections.actionCambiarContraFragmentToConfirmacionFragment()
+            Navigation.findNavController(view).navigate(directions)
         }
     }
 
