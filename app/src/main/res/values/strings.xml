@@ -8,6 +8,8 @@
     <string name="ing">Ingresar</string>
     <string name="info">¿No tienes usuario? Haz click aqui y crealo</string>
     <string name="info2">¿Olvidaste tu contraseña? Haz click aqui</string>
+    <string name="remember">¿Recordar Usuario?</string>
+
     <!-- Strings pantalla de formulario -->
     <string name="form">FORMULARIO</string>
     <string name="nya">Usuario</string>
@@ -48,7 +50,9 @@
     <string name="tuc">Tu contraseña</string>
     <string name="tue">Tu E-mail</string>
     <string name="tuu">Tu Usuario</string>
-
+    <string name="iusu">Informacion del usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

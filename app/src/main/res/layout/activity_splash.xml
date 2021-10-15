@@ -79,20 +79,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
+        app:layout_constraintVertical_bias="0.732" />
 
     <TextView
         android:id="@+id/label"
         android:layout_width="315dp"
         android:layout_height="31dp"
-        android:layout_marginLeft="79dp"
+        android:layout_marginLeft="80dp"
         android:hint="@string/info2"
         android:textSize="15dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.777" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -104,6 +104,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055"
         app:srcCompat="@drawable/museum_roman_temple_buildings_monuments_greek_icon_134521" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="47dp"
+        android:text="@string/remember"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,13 +51,16 @@ class navigation_user : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
+        replaceFragment(MuseoFragment() , "Museo", persona)
 
         navView.setNavigationItemSelectedListener {
 
             when(it.itemId){
 
-                R.id.nav_home ->replaceFragment(HomeFragment(), it.title.toString(), persona)
+                R.id.nav_home ->{
+                    val intent: Intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                }
                 R.id.nav_fav ->replaceFragment(FavoriteFragment() , it.title.toString(), persona)
                 R.id.nav_cs ->{
                     startActivity(abrir)
@@ -71,12 +74,11 @@ class navigation_user : AppCompatActivity() {
                     intent.putExtra(Intent.EXTRA_TEXT, "Me gustaria realizar la siguiente apreciación:")
                     startActivity(intent)
                 }
-                R.id.nav_qr ->{
-                    initScanner()
-                }
+
                 R.id.nav_set->{
                     replaceFragment(EditUsuarioFragment(), it.title.toString(), persona)
                 }
+                R.id.nav_museo-> replaceFragment(MuseoFragment(), it.title.toString(), persona)
 
 
             }
@@ -107,29 +109,6 @@ class navigation_user : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun initScanner(){
-       val integrator = IntentIntegrator(this)
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
-        integrator.setPrompt("Escanea")
-        integrator.initiateScan()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
-        if(result != null){
-            if(result.contents ==null){
-
-            }else{
-                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
-            }
-
-        }else{
-
-            super.onActivityResult(requestCode, resultCode, data)
-
-        }
 
 
-
-    }
 }

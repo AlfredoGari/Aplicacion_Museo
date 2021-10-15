@@ -11,22 +11,30 @@
         android:title="@string/inicio"
         android:icon="@drawable/home_item"/>
 
-    <item android:id="@+id/nav_qr"
-        android:title="@string/scan"
-        android:icon="@drawable/ic_baseline_qr_code_scanner_24"/>
-
     <item android:id="@+id/nav_fav"
         android:title="@string/fav"
         android:icon="@drawable/star_nav"/>
 
-    <item android:id="@+id/nav_set"
-        android:title="@string/set"
-        android:icon="@drawable/settings"/>
-
-
     <item android:id="@+id/nav_ema"
         android:title="@string/send"
         android:icon="@drawable/email"/>
+
+
+
+    <item android:title="@string/iusu">
+
+        <menu>
+
+            <item android:id="@+id/nav_set"
+                android:title="@string/set"
+                android:icon="@drawable/settings"/>
+
+        </menu>
+
+    </item>
+
+
+
 
     <item android:title="@string/logout">
 
