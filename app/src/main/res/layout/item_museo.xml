@@ -18,6 +18,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
         <TextView
             android:id="@+id/textoN"
             android:layout_width="126dp"

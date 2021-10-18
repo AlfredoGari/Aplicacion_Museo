@@ -3,6 +3,7 @@ package com.example.museo
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.museo.databinding.ItemMuseoBinding
 import com.squareup.picasso.Picasso
@@ -15,6 +16,9 @@ class MuseoAdapter(val museo:List<ObjetoMuseo>):RecyclerView.Adapter<MuseoAdapte
             binding.textoN.text = museo.nameOnjeto
             binding.textoF.text = museo.descripcionObjeto
             Picasso.get().load(museo.image).into(binding.imagen)
+            view.setOnClickListener{
+                Toast.makeText(view.context, "${museo.nameOnjeto}", Toast.LENGTH_SHORT).show()
+            }
         }
 
 

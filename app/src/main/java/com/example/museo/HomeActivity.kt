@@ -20,6 +20,11 @@ class HomeActivity : AppCompatActivity() {
             initScanner()
         }
 
+        binding.list.setOnClickListener{
+            val intent:Intent = Intent(this, ListadoMuseo::class.java)
+            startActivity(intent)
+        }
+
 
     }
 

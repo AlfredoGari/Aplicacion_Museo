@@ -16,9 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Museo">
         <activity
+            android:name=".ListadoMuseo"
+            android:exported="true" />
+        <activity
             android:name=".HomeActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".navigation_user"
             android:exported="true"
