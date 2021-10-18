@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MuseoFragment"
-    android:background="@drawable/mark">
+    android:background="@drawable/vertical">
 
     <ImageView
         android:id="@+id/imageView"
