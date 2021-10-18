@@ -51,8 +51,13 @@
     <string name="tue">Tu E-mail</string>
     <string name="tuu">Tu Usuario</string>
     <string name="iusu">Informacion del usuario</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="informacion">Esta aplicacion esta realizada con el proposito de gestionar
+        diferentes aspectos del Museo, ingresando al siguiente menu encontrado arriba a la derecha podras
+    navegar a traves de toda la aplicacion. Si encuentras un QR debreas acceder a la pestaña de inicio
+    y seleccionar la opcion "Escanear" </string>
+    <string name="informacion2">Si tienes alguna apreciacion, no dudes en mandar un mail, desde ya muchas
+    gracias por utilizar la aplicacion</string>
 
 
 </resources>
