@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.room.Database
+import com.example.museo.UserPersist.Companion.pref
 import com.example.museo.databinding.ActivitySplashBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        checkuser()
 
         var listaUsuarios = emptyList<Usuario>()
 
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                 if(usuar==binding.inputlayout2.text.toString() && contra==binding.inputlayout.text.toString()){
                     val persona: Usuario
                     persona = listaUsuarios[contador]
+                    accessToDetail(persona)
                     val intent:Intent = Intent(this, navigation_user::class.java)
                     intent.putExtra("dato",persona)
                     startActivity(intent)
@@ -76,6 +79,24 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+    }
+    fun accessToDetail(persona: Usuario){
+        if(binding.checkBox.isChecked){
+            pref.saveName(binding.inputlayout2.text.toString())
+            pref.saveBool(binding.checkBox.isChecked)
+            pref.saveCorreo(persona.ema)
+
+        }
+    }
+    fun checkuser(){
+        if(pref.getName().isNotEmpty()){
+            gotoActivity()
+        }
+    }
+    fun gotoActivity(){
+        val intent:Intent = Intent(this, navigation_user::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 

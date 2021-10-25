@@ -9,6 +9,7 @@
     <string name="info">¿No tienes usuario? Haz click aqui y crealo</string>
     <string name="info2">¿Olvidaste tu contraseña? Haz click aqui</string>
     <string name="remember">¿Recordar Usuario?</string>
+    <string name="ru">¿Recordar Usuario?</string>
 
     <!-- Strings pantalla de formulario -->
     <string name="form">FORMULARIO</string>
@@ -46,6 +47,8 @@
 
     <string name="scan">Escanea QR</string>
     <string name="listac">Lista completa</string>
+
+
 
     <string name="tuc">Tu contraseña</string>
     <string name="tue">Tu E-mail</string>

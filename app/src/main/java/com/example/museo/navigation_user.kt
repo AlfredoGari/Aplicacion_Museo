@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.museo.UserPersist.Companion.pref
 import com.example.museo.databinding.ActivityCrearUsuarioBinding
 import com.example.museo.databinding.ActivityNavigationUserBinding
 import com.example.museo.databinding.ActivitySplashBinding
@@ -25,9 +26,13 @@ class navigation_user : AppCompatActivity() {
         binding = ActivityNavigationUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val objetoIntent: Intent = intent
+        //val objetoIntent: Intent = intent
         val persona: Usuario
-        persona = intent.getSerializableExtra("dato") as Usuario
+        //val persona2: Usuario
+        val username = pref.getName()
+        val email = pref.getCorreo()
+        persona = Usuario(username,"",email)
+        //persona2 = intent.getSerializableExtra("dato") as Usuario
         drawerLayout = findViewById(R.id.drawerLayout)
 
         val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout)
@@ -40,6 +45,8 @@ class navigation_user : AppCompatActivity() {
         val abrir: Intent =Intent(this, MainActivity::class.java)
         navUsername.text = persona.usua.toString()
         navcorreo.text = persona.ema.toString()
+
+
 
 
 
@@ -63,6 +70,7 @@ class navigation_user : AppCompatActivity() {
                 }
                 R.id.nav_fav ->replaceFragment(FavoriteFragment() , it.title.toString(), persona)
                 R.id.nav_cs ->{
+                    pref.wipe()
                     startActivity(abrir)
                     finish()
                 }
