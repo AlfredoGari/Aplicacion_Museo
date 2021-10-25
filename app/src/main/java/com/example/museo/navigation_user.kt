@@ -26,14 +26,20 @@ class navigation_user : AppCompatActivity() {
         binding = ActivityNavigationUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //val objetoIntent: Intent = intent
-        val persona: Usuario
-        //val persona2: Usuario
+        val objetoIntent: Intent = intent
+        var persona: Usuario
+        val persona2: Usuario
         val username = pref.getName()
         val email = pref.getCorreo()
         persona = Usuario(username,"",email)
-        //persona2 = intent.getSerializableExtra("dato") as Usuario
         drawerLayout = findViewById(R.id.drawerLayout)
+
+        if(pref.getName()==""){
+            persona2 = intent.getSerializableExtra("dato") as Usuario
+            persona = persona2
+        }else{
+
+        }
 
         val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout)
         val navView : NavigationView = findViewById(R.id.nav_view)
