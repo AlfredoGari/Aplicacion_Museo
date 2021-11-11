@@ -3,6 +3,7 @@ package com.example.museo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.museo.databinding.ActivityListadoMuseoBinding
 
 class ListadoMuseo : AppCompatActivity() {
