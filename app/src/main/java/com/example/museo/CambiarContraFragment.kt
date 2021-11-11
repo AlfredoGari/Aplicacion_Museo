@@ -27,6 +27,15 @@ class CambiarContraFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         myboton.setOnClickListener{
+
+            val database = AppDataBase.getDatabase(this)
+
+            var listaUsuarios = emptyList<Usuario>()
+
+            dataBase.usuarios().getAll().observe(this, Observer {
+                listaUsuarios = it
+            })
+
             val directions = CambiarContraFragmentDirections.actionCambiarContraFragmentToConfirmacionFragment()
             Navigation.findNavController(view).navigate(directions)
         }
