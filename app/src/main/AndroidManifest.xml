@@ -8,14 +8,17 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".UserPersist"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
-        android:name=".UserPersist"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Museo">
+        <activity
+            android:name=".Item_museo"
+            android:exported="true" />
         <activity
             android:name=".ListadoMuseo"
             android:exported="true" />
