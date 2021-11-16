@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 
 class CambiarContraFragment: Fragment() {
@@ -28,13 +29,16 @@ class CambiarContraFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         myboton.setOnClickListener{
 
-    //        val database = AppDataBase.getDatabase(this)
 
-    //        var listaUsuarios = emptyList<Usuario>()
 
-    //        dataBase.usuarios().getAll().observe(this, Observer {
-    //            listaUsuarios = it
-    //        })
+            val database = AppDataBase.getDatabase(requireContext())
+
+            var listaUsuarios = emptyList<Usuario>()
+
+            database.usuarios().getAll().observe(viewLifecycleOwner, Observer { listaUsuarios=it })
+
+
+            Toast.makeText(requireContext(), "hola ", Toast.LENGTH_SHORT).show()
 
             val directions = CambiarContraFragmentDirections.actionCambiarContraFragmentToConfirmacionFragment()
             Navigation.findNavController(view).navigate(directions)

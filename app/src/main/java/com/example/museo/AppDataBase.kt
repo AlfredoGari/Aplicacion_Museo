@@ -7,10 +7,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import java.security.AccessControlContext
 
-@Database(entities = [Usuario::class], version = 1)
+@Database(entities = [Usuario::class, Favorito::class], version = 1)
 abstract class AppDataBase : RoomDatabase() {
 
     abstract fun usuarios() : UsuarioDao
+    abstract fun favoritos() : FavoritoDao
 
     companion object {
         @Volatile
@@ -28,7 +29,7 @@ abstract class AppDataBase : RoomDatabase() {
                     context.applicationContext,
                     AppDataBase::class.java,
                     "app_database"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
 
                 INSTANCE = instance
 
