@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Museo">
         <activity
+            android:name=".ItemMuseo"
+            android:exported="true" />
+        <activity
             android:name=".Item_museo"
             android:exported="true" />
         <activity

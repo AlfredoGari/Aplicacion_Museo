@@ -47,7 +47,7 @@ class ListadoMuseo : AppCompatActivity() {
      newRecyclerView.adapter = adapter
      adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener{
          override fun onItemClick(position: Int, title: String) {
-             val intent = Intent(this@ListadoMuseo, Item_museo::class.java)
+             val intent = Intent(this@ListadoMuseo, ItemMuseo::class.java)
              startActivity(intent)
          }
 
