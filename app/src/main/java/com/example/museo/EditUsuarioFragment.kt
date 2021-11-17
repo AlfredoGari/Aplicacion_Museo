@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.lifecycle.Observer
 import com.example.museo.databinding.FragmentEditUsuarioBinding
 
 
@@ -22,6 +23,20 @@ class EditUsuarioFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        val database = AppDataBase.getDatabase(requireContext())
+        val usuar = requireArguments().getString("usuario")
+        var user: Usuario
+        user = Usuario("", "", "")
+        var contenido: String
+        contenido = ""
+        if (usuar != null) {
+            database.usuarios().get(usuar).observe(viewLifecycleOwner, Observer { user = it })
+        }
+        contenido = user.usua
+
+
+
         if(arguments != null){
             val usuario = requireArguments().getString("usuario")
             val contra = requireArguments().getString("contraseña")
@@ -29,7 +44,9 @@ class EditUsuarioFragment : Fragment() {
             val et: EditText = binding.userchange
             val et1: EditText = binding.emailchange
             val et2: EditText = binding.contrachange
-            et.setText(usuario)
+            with(et) {
+                setText(contenido)
+            }
             et1.setText(email)
             et2.setText(contra)
         }

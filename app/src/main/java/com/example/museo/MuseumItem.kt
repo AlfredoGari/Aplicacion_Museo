@@ -20,7 +20,7 @@ data class MuseumItem (
     @SerializedName("item_main_content")
     val item_main_content: String,
 
-    @SerializedName("item_main_picture")
+    @SerializedName( "item_main_picture")
     val item_main_picture: String,
 
 
