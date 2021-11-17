@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.museo.databinding.ActivityHomeBinding
 import com.example.museo.databinding.FragmentEditUsuarioBinding
 import com.google.zxing.integration.android.IntentIntegrator
@@ -37,11 +38,15 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
+        val codigo: String
         if(result != null){
             if(result.contents ==null){
 
             }else{
-                Toast.makeText(this, "El valor escaneado es: ${result.contents}", Toast.LENGTH_SHORT).show()
+                codigo = result.contents
+                val intent: Intent = Intent(this, ItemMuseo::class.java)
+                intent.putExtra("codigo", codigo)
+                startActivity(intent)
             }
 
         }else{
