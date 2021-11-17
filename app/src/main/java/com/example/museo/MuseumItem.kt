@@ -23,5 +23,41 @@ data class MuseumItem (
     @SerializedName( "item_main_picture")
     val item_main_picture: String,
 
+    @SerializedName("item_gallery")
+    val item_gallery: List<ItemGallery>,
 
-        )
+    @SerializedName("item_youtube")
+    val item_youtube: String,
+
+    @SerializedName("item_tags")
+    val item_tags: String,
+
+    @SerializedName("item_external_links")
+    val item_external_links: List<ExternalLinks>,
+
+    @SerializedName("item_lat")
+    val item_lat: String,
+
+    @SerializedName("item_long")
+    val item_long: String,
+
+    @SerializedName("item_audio_link")
+    val item_audio_link: String
+    )
+
+data class ItemGallery(
+    @SerializedName("url")
+    val url : String,
+
+    @SerializedName("description")
+    val description: String
+)
+
+data class ExternalLinks(
+    @SerializedName("url")
+    val url : String,
+
+    @SerializedName("name")
+    val name: String
+
+)
