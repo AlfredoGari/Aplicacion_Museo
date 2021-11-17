@@ -15,7 +15,7 @@ class MyAdapter(private val newlist: ArrayList<ObjetoMuseo>) : RecyclerView.Adap
     private lateinit var mListener: onItemClickListener
 
     interface onItemClickListener{
-        fun onItemClick(position: Int, title: String)
+        fun onItemClick(position: Int, codigo: String)
     }
 
     fun setOnItemClickListener(listener: onItemClickListener){
@@ -32,6 +32,7 @@ class MyAdapter(private val newlist: ArrayList<ObjetoMuseo>) : RecyclerView.Adap
         Picasso.get().load(currentItem.image).into(holder.image)
         holder.title.text = currentItem.nameOnjeto
         holder.header.text = currentItem.descripcionObjeto
+        holder.codigo.text = currentItem.codigo
     }
 
     override fun getItemCount(): Int {
@@ -42,11 +43,12 @@ class MyAdapter(private val newlist: ArrayList<ObjetoMuseo>) : RecyclerView.Adap
         val title : TextView = itemView.findViewById(R.id.textoN)
         val header : TextView = itemView.findViewById(R.id.textoF)
         val image : ImageView = itemView.findViewById(R.id.imagen)
+        val codigo : TextView = itemView.findViewById(R.id.codigoo)
 
         init {
 
             itemView.setOnClickListener {
-                listener.onItemClick(adapterPosition, title.text.toString())
+                listener.onItemClick(adapterPosition, codigo.text.toString())
             }
 
         }
