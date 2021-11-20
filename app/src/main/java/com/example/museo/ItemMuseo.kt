@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.museo.databinding.ActivityItemMuseoBinding
+import com.squareup.picasso.Picasso
 
 class ItemMuseo : AppCompatActivity() {
 
@@ -27,6 +28,10 @@ class ItemMuseo : AppCompatActivity() {
         worker.doWork(object : ActionListenerCallback {
             override fun onActionSuccess(successMessage: MuseumItem) {
                 Log.i("Success", successMessage.toString())
+                Picasso.get().load(successMessage.item_main_picture).into(binding.imagenfoto)
+                binding.title.text = successMessage.item_title
+                binding.descripcion.text = successMessage.item_intro
+
             }
 
             override fun onActionFailure(throwableError: Throwable) {

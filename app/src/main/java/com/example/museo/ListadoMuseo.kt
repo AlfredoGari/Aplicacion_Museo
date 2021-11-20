@@ -16,7 +16,8 @@ class ListadoMuseo : AppCompatActivity() {
         ObjetoMuseo("03","La noche estrellada", " La noche estrellada es una de las pinturas más reconocidas en la historia de la cultura occidental.  La vista es de la ventana de su dormitorio", "https://i.pinimg.com/originals/a5/76/b4/a576b4cc1eadab3b93dd1d7e4038e567.jpg"),
         ObjetoMuseo("04","La Gioconda", "Es una obra pictórica del polímata renacentista italiano Leonardo da Vinci. Fue adquirida por el rey Francisco I de Francia", "https://marcianosmx.com/wp-content/uploads/2012/10/mona-lisa.jpg"),
         ObjetoMuseo("05","El Guernica", "Fue inspirada en un feroz bombardeo sufrido por la ciudad del País Vasco el 26 de abril de 1937", "https://i1.wp.com/www.cromacultura.com/wp-content/uploads/2012/03/picasso.jpg?fit=400%2C400&ssl=1"),
-        ObjetoMuseo("06","La persistencia de la memoria", "Es un cuadro del pintor español Salvador Dalí pintado en 1931. Realizado mediante la técnica del óleo sobre lienzo, es de estilo surrealista", "https://www.picclickimg.com/d/l400/pict/142260745410_/Reloj-Repisa-Derretido-Salvador-Dal%C3%AD-Decoraci%C3%B3n-Casa-Analogico.jpg")
+        ObjetoMuseo("06","La persistencia de la memoria", "Es un cuadro del pintor español Salvador Dalí pintado en 1931. Realizado mediante la técnica del óleo sobre lienzo, es de estilo surrealista", "https://www.picclickimg.com/d/l400/pict/142260745410_/Reloj-Repisa-Derretido-Salvador-Dal%C3%AD-Decoraci%C3%B3n-Casa-Analogico.jpg"),
+        ObjetoMuseo("07","FMA IA-58 Pucará", "La Fuerza Aérea Argentina presentó a principios de 1968 los requerimientos al Área Material Córdoba para la construcción del IA-58 Pucará." , "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Argentina_Air_Force_FMA_IA-58A_Pucara_Lofting-1.jpg/600px-Argentina_Air_Force_FMA_IA-58A_Pucara_Lofting-1.jpg")
     )
 
     private lateinit var newArrayList : ArrayList<ObjetoMuseo>

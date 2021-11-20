@@ -75,7 +75,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/crearusu"
+        android:id="@+id/actusu"
         android:layout_width="335dp"
         android:layout_height="45dp"
         android:layout_marginLeft="36dp"

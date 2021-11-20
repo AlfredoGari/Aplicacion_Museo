@@ -27,29 +27,43 @@ class EditUsuarioFragment : Fragment() {
         val database = AppDataBase.getDatabase(requireContext())
         val usuar = requireArguments().getString("usuario")
         var user: Usuario
-        user = Usuario("", "", "")
+        user = Usuario("lfdlf", "ddffm", "kdf")
         var contenido: String
         contenido = ""
         if (usuar != null) {
-            database.usuarios().get(usuar).observe(viewLifecycleOwner, Observer { user = it })
+
+            database.usuarios().get(usuar).observe(viewLifecycleOwner,
+                Observer {
+                    user = it
+                    contenido = it.usua
+                    actualizar(user)
+                })
+
         }
-        contenido = user.usua
 
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.actusu.setOnClickListener {
 
+        //    val database = AppDataBase.getDatabase(requireContext())
+        //    database.usuarios().cambiat(binding.contrachange.text.toString(),binding.userchange.text.toString())
+
+        }
+
+    }
+
+    fun actualizar(user: Usuario){
         if(arguments != null){
-            val usuario = requireArguments().getString("usuario")
-            val contra = requireArguments().getString("contraseña")
-            val email = requireArguments().getString("email")
             val et: EditText = binding.userchange
             val et1: EditText = binding.emailchange
             val et2: EditText = binding.contrachange
-            with(et) {
-                setText(contenido)
-            }
-            et1.setText(email)
-            et2.setText(contra)
+            et.setText(user.usua)
+            et1.setText(user.ema)
+            et2.setText(user.contr)
         }
+
     }
 
 
