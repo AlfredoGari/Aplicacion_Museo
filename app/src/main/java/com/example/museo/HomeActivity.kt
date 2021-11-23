@@ -16,6 +16,10 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val id: Int
+        id = intent.getSerializableExtra("id") as Int
+
+
 
         binding.qr.setOnClickListener{
             initScanner()
@@ -23,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.list.setOnClickListener{
             val intent:Intent = Intent(this, ListadoMuseo::class.java)
+            intent.putExtra("id",id)
             startActivity(intent)
         }
 

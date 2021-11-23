@@ -7,7 +7,7 @@ import java.io.Serializable
 @Entity(tableName = "favoritos")
 class Favorito (
 
-    val idusuario:String,
+    val idusuario:Int,
     val codigo:String,
     val urlImage:String,
     val title:String,

@@ -60,6 +60,7 @@
     y seleccionar la opcion "Escanear" </string>
     <string name="informacion2">Si tienes alguna apreciacion, no dudes en mandar un mail, desde ya muchas
     gracias por utilizar la aplicacion</string>
+    <string name="favorite">Agregar a Favoritos</string>
 
 
 </resources>

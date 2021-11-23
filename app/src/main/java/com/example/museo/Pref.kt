@@ -7,6 +7,7 @@ class Pref(val context: Context) {
         val SHARED_USER_NAME = "username"
         val SHARED_CORREO = "correo"
         val SHARED_BOL = "bol"
+        val SHARED_ID ="id"
 
 
         val storage = context.getSharedPreferences(SHARED_NAME, 0)
@@ -21,6 +22,14 @@ class Pref(val context: Context) {
 
     fun saveCorreo(correo:String){
         storage.edit().putString(SHARED_CORREO, correo).apply()
+    }
+
+    fun saveid(id: Int){
+        storage.edit().putInt(SHARED_ID, id).apply()
+    }
+
+    fun getId():Int{
+        return storage.getInt(SHARED_ID, 0)
     }
 
     fun getName():String{

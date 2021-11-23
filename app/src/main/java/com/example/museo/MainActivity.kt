@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
             pref.saveName(binding.inputlayout2.text.toString())
             pref.saveBool(binding.checkBox.isChecked)
             pref.saveCorreo(persona.ema)
+            pref.saveid(persona.idUsuario)
 
         }
     }

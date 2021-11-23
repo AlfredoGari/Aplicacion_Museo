@@ -31,6 +31,7 @@ class navigation_user : AppCompatActivity() {
         val persona2: Usuario
         val username = pref.getName()
         val email = pref.getCorreo()
+        val id = pref.getId()
         persona = Usuario(username,"",email)
         drawerLayout = findViewById(R.id.drawerLayout)
 
@@ -71,7 +72,14 @@ class navigation_user : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.nav_home ->{
+                    val id_u: Int
+                    if(pref.getName()==""){
+                        id_u = persona.idUsuario
+                    }else{
+                        id_u = pref.getId()
+                    }
                     val intent: Intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("id",id_u)
                     startActivity(intent)
                 }
                 R.id.nav_fav ->replaceFragment(FavoriteFragment() , it.title.toString(), persona)
