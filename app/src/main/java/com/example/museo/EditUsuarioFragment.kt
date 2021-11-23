@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.example.museo.databinding.FragmentEditUsuarioBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class EditUsuarioFragment : Fragment() {
@@ -47,8 +50,10 @@ class EditUsuarioFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.actusu.setOnClickListener {
 
-        //    val database = AppDataBase.getDatabase(requireContext())
-        //    database.usuarios().cambiat(binding.contrachange.text.toString(),binding.userchange.text.toString())
+        val database = AppDataBase.getDatabase(requireContext())
+            lifecycleScope.launch(Dispatchers.IO){
+                database.usuarios().cambiat(binding.contrachange.text.toString(),binding.userchange.text.toString())
+            }
 
         }
 

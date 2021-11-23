@@ -1,5 +1,6 @@
 package com.example.museo
 
+import android.content.Context
 import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +8,14 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.example.museo.databinding.ActivityItemMuseoBinding
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.DisposableHandle
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
 
 class ItemMuseo : AppCompatActivity() {
 
@@ -57,12 +64,19 @@ class ItemMuseo : AppCompatActivity() {
 
 
     }
-    private fun guardar(id: Int, codigo: String, url: String, title: String, intro:String){
+    fun guardar(id: Int, codigo: String, url: String, title: String, intro:String){
+
         val database = AppDataBase.getDatabase(this)
-        val favorito: Favorito
-        favorito = Favorito(id,codigo, url, title, intro)
-        database.favoritos().insertAll(favorito)
-        Toast.makeText(this, "guardado", Toast.LENGTH_SHORT).show()
+
+
+        lifecycleScope.launch(Dispatchers.IO){
+            val favorito: Favorito
+            favorito = Favorito(id,codigo, url, title, intro)
+            database.favoritos().insertAll(favorito)
+
+        }
+        Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show()
+
 
     }
 }

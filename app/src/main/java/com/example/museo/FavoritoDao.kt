@@ -10,7 +10,7 @@ import androidx.room.Query
 interface FavoritoDao {
 
     @Query("SELECT * FROM favoritos WHERE idusuario = :idusuar")
-    fun getAllF(idusuar:String): LiveData<List<Favorito>>
+    fun getAllF(idusuar:Int): LiveData<List<Favorito>>
 
     @Insert
     fun insertAll(vararg favoritos: Favorito)

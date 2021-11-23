@@ -32,7 +32,7 @@ class navigation_user : AppCompatActivity() {
         val username = pref.getName()
         val email = pref.getCorreo()
         val id = pref.getId()
-        persona = Usuario(username,"",email)
+        persona = Usuario(username,"",email, id)
         drawerLayout = findViewById(R.id.drawerLayout)
 
         if(pref.getName()==""){
@@ -114,6 +114,7 @@ class navigation_user : AppCompatActivity() {
         bundle.putString("usuario", persona.usua.toString())
         bundle.putString("contraseña", persona.contr.toString())
         bundle.putString("email", persona.ema.toString())
+        bundle.putInt("id_p", persona.idUsuario)
         fragment.arguments = bundle
         val fragmentManager = supportFragmentManager
         val fragmentTransaction= fragmentManager.beginTransaction()
