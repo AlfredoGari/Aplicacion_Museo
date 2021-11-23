@@ -4,6 +4,7 @@ import android.content.Context
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.system.exitProcess
 
 class GetPostWorker(context: Context) {
 
@@ -11,12 +12,18 @@ class GetPostWorker(context: Context) {
 
     private lateinit var response: Call<MuseumItem>
 
-    fun doWork(callback: ActionListenerCallback){
+    fun doWork(callback: ActionListenerCallback, codigo:String){
 
         listener = callback
 
         val museumService = NetworkingImplementation().service
-        response = museumService.getMuseumItem()
+        if(codigo=="1234567890"){
+            response = museumService.getMuseumItem()
+        }
+        if(codigo=="01"){
+            response = museumService.getMuseumItemDavid()
+        }
+
         response.enqueue(object : Callback<MuseumItem> {
             override fun onResponse(call: Call<MuseumItem>, response: Response<MuseumItem>) {
                 response.body()?.let {

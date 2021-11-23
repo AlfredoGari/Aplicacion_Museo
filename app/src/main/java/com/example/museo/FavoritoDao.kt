@@ -14,4 +14,7 @@ interface FavoritoDao {
 
     @Insert
     fun insertAll(vararg favoritos: Favorito)
+
+    @Query("DELETE FROM favoritos WHERE idusuario = :idusuar AND codigo = :codig")
+    fun eliminar(idusuar: Int, codig: String)
 }

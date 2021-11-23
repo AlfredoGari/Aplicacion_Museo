@@ -18,13 +18,13 @@
         android:theme="@style/Theme.Museo">
         <activity
             android:name=".ItemMuseo"
-            android:exported="true" />
-        <activity
-            android:name=".Item_museo"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".ListadoMuseo"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".HomeActivity"
             android:exported="true"

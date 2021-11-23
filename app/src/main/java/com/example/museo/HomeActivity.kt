@@ -44,6 +44,8 @@ class HomeActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data)
         val codigo: String
+        val id: Int
+        id = intent.getSerializableExtra("id") as Int
         if(result != null){
             if(result.contents ==null){
 
@@ -51,6 +53,7 @@ class HomeActivity : AppCompatActivity() {
                 codigo = result.contents
                 val intent: Intent = Intent(this, ItemMuseo::class.java)
                 intent.putExtra("codigo", codigo)
+                intent.putExtra("id",id)
                 startActivity(intent)
             }
 

@@ -37,7 +37,7 @@ class ItemMuseo : AppCompatActivity() {
         callService(codigo, id)
     }
     private fun callService(codigo: String, id: Int){
-        if(codigo=="1234567890"){
+
             worker.doWork(object : ActionListenerCallback {
                 override fun onActionSuccess(successMessage: MuseumItem) {
                     Log.i("Success", successMessage.toString())
@@ -49,8 +49,12 @@ class ItemMuseo : AppCompatActivity() {
                     binding.descripcion.text = successMessage.item_intro
                     binding.descripcion.isVisible = true
                     binding.fav.isVisible = true
+                    binding.eli.isVisible = true
                     binding.fav.setOnClickListener {
                         guardar(id, codigo, successMessage.item_main_picture, successMessage.item_title, successMessage.item_intro)
+                    }
+                    binding.eli.setOnClickListener {
+                        eliminar(id, codigo)
                     }
 
                 }
@@ -59,8 +63,8 @@ class ItemMuseo : AppCompatActivity() {
                     Log.i("Failure", throwableError.message.toString())
                 }
 
-            })
-        }
+            }, codigo)
+
 
 
     }
@@ -75,8 +79,14 @@ class ItemMuseo : AppCompatActivity() {
             database.favoritos().insertAll(favorito)
 
         }
-        Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Favorito Guardado", Toast.LENGTH_SHORT).show()
+    }
 
-
+    fun eliminar(id: Int, codigo: String){
+        val database = AppDataBase.getDatabase(this)
+        lifecycleScope.launch(Dispatchers.IO){
+            database.favoritos().eliminar(id, codigo)
+        }
+        Toast.makeText(this, "Favorito Eliminado", Toast.LENGTH_SHORT).show()
     }
 }
