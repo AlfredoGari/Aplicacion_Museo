@@ -11,7 +11,7 @@ import com.example.museo.databinding.ActivityListadoMuseoBinding
 class ListadoMuseo : AppCompatActivity() {
 
     val listadofav = arrayListOf<ObjetoMuseo>(
-        ObjetoMuseo("01","David", " Representa a la figura bíblica del David que acabó con el gigante Goliat con una honda", "https://m.media-amazon.com/images/I/61n6ifjM-oL._AC_UL400_.jpg"),
+        ObjetoMuseo("01","David", "Representa a la figura bíblica del David que acabó con el gigante Goliat con una honda", "https://m.media-amazon.com/images/I/61n6ifjM-oL._AC_UL400_.jpg"),
         ObjetoMuseo("02","Las señoritas de Avignon", "Picasso nos muestra en esta obra a cinco prostitutas barcelonesas y lo hace de un modo inédito hasta entonces: lo hace al estilo cubista.", "https://barnebys.imgix.net/https%3A%2F%2Fsubastareal.es%2Fincludes%2Fresize.aspx%3Fimg%3D%2Ffotos%2Fpablo-picasso-las-senoritas-de-avignon-4500-11636-1.jpg%26w%3D560?auto=format%2Ccompress&crop=0&cs=tinysrgb&fit=crop&h=400&ixlib=php-2.3.0&trim=auto&w=400&s=6be742e4e93123acabc8c00cada58406"),
         ObjetoMuseo("03","La noche estrellada", " La noche estrellada es una de las pinturas más reconocidas en la historia de la cultura occidental.  La vista es de la ventana de su dormitorio", "https://i.pinimg.com/originals/a5/76/b4/a576b4cc1eadab3b93dd1d7e4038e567.jpg"),
         ObjetoMuseo("04","La Gioconda", "Es una obra pictórica del polímata renacentista italiano Leonardo da Vinci. Fue adquirida por el rey Francisco I de Francia", "https://marcianosmx.com/wp-content/uploads/2012/10/mona-lisa.jpg"),

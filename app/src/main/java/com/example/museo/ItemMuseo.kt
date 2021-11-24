@@ -48,13 +48,33 @@ class ItemMuseo : AppCompatActivity() {
                     binding.title.isVisible = true
                     binding.descripcion.text = successMessage.item_intro
                     binding.descripcion.isVisible = true
+                    binding.hsv.isVisible = true
+                    binding.sv.isVisible = true
                     binding.fav.isVisible = true
                     binding.eli.isVisible = true
+                    Picasso.get().load(successMessage.item_gallery[0].url).into(binding.imagen1)
+                    Picasso.get().load(successMessage.item_gallery[1].url).into(binding.imagen2)
+                    Picasso.get().load(successMessage.item_gallery[2].url).into(binding.imagen3)
+                    Picasso.get().load(successMessage.item_main_picture).into(binding.imagen4)
+
                     binding.fav.setOnClickListener {
                         guardar(id, codigo, successMessage.item_main_picture, successMessage.item_title, successMessage.item_intro)
+                        finish()
                     }
                     binding.eli.setOnClickListener {
                         eliminar(id, codigo)
+                    }
+                    binding.imagen1.setOnClickListener{
+                        Picasso.get().load(successMessage.item_gallery[0].url).into(binding.imagenfoto)
+                    }
+                    binding.imagen2.setOnClickListener{
+                        Picasso.get().load(successMessage.item_gallery[1].url).into(binding.imagenfoto)
+                    }
+                    binding.imagen3.setOnClickListener{
+                        Picasso.get().load(successMessage.item_gallery[2].url).into(binding.imagenfoto)
+                    }
+                    binding.imagen4.setOnClickListener{
+                        Picasso.get().load(successMessage.item_main_picture).into(binding.imagenfoto)
                     }
 
                 }
@@ -76,7 +96,9 @@ class ItemMuseo : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO){
             val favorito: Favorito
             favorito = Favorito(id,codigo, url, title, intro)
+            //database.favoritos().verificar(id,codigo).codigo
             database.favoritos().insertAll(favorito)
+
 
         }
         Toast.makeText(this, "Favorito Guardado", Toast.LENGTH_SHORT).show()
