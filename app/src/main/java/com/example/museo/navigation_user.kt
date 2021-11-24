@@ -107,6 +107,8 @@ class navigation_user : AppCompatActivity() {
             true
         }
 
+        
+
     }
 
     private fun replaceFragment(fragment: Fragment, title: String, persona: Usuario){
