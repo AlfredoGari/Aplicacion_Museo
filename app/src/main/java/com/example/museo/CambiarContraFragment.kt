@@ -7,9 +7,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class CambiarContraFragment: Fragment() {
 
@@ -34,55 +38,25 @@ class CambiarContraFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         myboton.setOnClickListener{
 
-
-
             val database = AppDataBase.getDatabase(requireContext())
-            var listaUsuarios = emptyList<Usuario>()
-            var ver: Boolean
 
-            database.usuarios().getAll().observe(viewLifecycleOwner,
-                Observer {
-                    listaUsuarios=it
-                    ver=verificar(listaUsuarios, view)
+            lifecycleScope.launch(Dispatchers.IO){
+                val usar: Usuario
+                usar = database.usuarios().getU(myuser.text.toString())
+                if(usar==null){
 
-                })
+                }else{
 
-
-        }
-    }
-
-    fun verificar(listado: List<Usuario>, view: View): Boolean{
-
-        var usuar: String
-        var contador: Int
-        var verif: Boolean
-
-        verif = false
-        contador = 0
-
-        for(i in listado){
-
-            usuar = listado[contador].usua
-
-            if(usuar==myuser.text.toString()){
-                verif = true
-                Toast.makeText(requireContext(), "Cambiando contraseña...", Toast.LENGTH_SHORT).show()
-            }else{
-
-
+                }
             }
-            contador = contador +1
-        }
 
-        if(verif==true){
-            val directions = CambiarContraFragmentDirections.actionCambiarContraFragmentToConfirmacionFragment()
-            Navigation.findNavController(view).navigate(directions)
-        }else{
-            Toast.makeText(requireContext(), "No se encontro", Toast.LENGTH_SHORT).show()
-        }
-        return verif
 
+
+
+        }
     }
+
+
 
 
 }

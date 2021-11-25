@@ -29,6 +29,15 @@ class GetPostWorker(context: Context) {
         if(codigo=="03"){
             response = museumService.getMuseumItemLanoche()
         }
+        if(codigo=="04"){
+            response = museumService.getMuseumItemLaGioconda()
+        }
+        if(codigo=="05"){
+            response = museumService.getMuseumItemElGuernica()
+        }
+        if(codigo=="06"){
+            response = museumService.getMuseumItemLaPersistencia()
+        }
 
         response.enqueue(object : Callback<MuseumItem> {
             override fun onResponse(call: Call<MuseumItem>, response: Response<MuseumItem>) {

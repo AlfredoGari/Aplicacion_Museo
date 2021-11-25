@@ -19,4 +19,13 @@ interface MuseumService {
 
     @GET("v1/07b7adf9-78b1-4625-9abe-6df68d68dac3")
     fun getMuseumItems(): Call<item_list>
+
+    @GET("v1/2bb7c731-6d7d-4de8-8580-791149c5177e")
+    fun getMuseumItemLaGioconda(): Call<MuseumItem>
+
+    @GET("v1/e8df4ad2-f4a2-4a1c-973f-ed24c39f31b7")
+    fun getMuseumItemElGuernica(): Call<MuseumItem>
+
+    @GET("v1/b1be7571-a2c2-47e6-8ead-b7ab01c3c8e8")
+    fun getMuseumItemLaPersistencia(): Call<MuseumItem>
 }

@@ -23,4 +23,7 @@ interface UsuarioDao {
     @Query("UPDATE usuarios SET contr = :contraN WHERE usua = :user")
     fun cambiat(contraN: String, user: String)
 
+    @Query("SELECT * FROM usuarios WHERE usua = :usuar")
+    fun getU(usuar: String): Usuario
+
 }

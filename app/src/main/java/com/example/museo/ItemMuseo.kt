@@ -58,6 +58,7 @@ class ItemMuseo : AppCompatActivity() {
                             binding.fav.isVisible = true
                         }else{
                             binding.eli.isVisible = true
+                            binding.estrella.isVisible = true
                         }
                     }
                     Picasso.get().load(successMessage.item_gallery[0].url).into(binding.imagen1)
