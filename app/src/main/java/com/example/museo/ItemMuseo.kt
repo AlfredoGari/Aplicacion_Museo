@@ -34,9 +34,9 @@ class ItemMuseo : AppCompatActivity() {
         id = intent.getSerializableExtra("id") as Int
 
 
-        callService(codigo, id)
+        callService(codigo, id, this)
     }
-    private fun callService(codigo: String, id: Int){
+    private fun callService(codigo: String, id: Int, context: Context){
 
             worker.doWork(object : ActionListenerCallback {
                 override fun onActionSuccess(successMessage: MuseumItem) {
@@ -50,8 +50,16 @@ class ItemMuseo : AppCompatActivity() {
                     binding.descripcion.isVisible = true
                     binding.hsv.isVisible = true
                     binding.sv.isVisible = true
-                    binding.fav.isVisible = true
-                    binding.eli.isVisible = true
+                    val database = AppDataBase.getDatabase(context)
+                    lifecycleScope.launch(Dispatchers.IO){
+                        val favorito: Favorito
+                        favorito = database.favoritos().verificar(id,codigo)
+                        if(favorito==null){
+                            binding.fav.isVisible = true
+                        }else{
+                            binding.eli.isVisible = true
+                        }
+                    }
                     Picasso.get().load(successMessage.item_gallery[0].url).into(binding.imagen1)
                     Picasso.get().load(successMessage.item_gallery[1].url).into(binding.imagen2)
                     Picasso.get().load(successMessage.item_gallery[2].url).into(binding.imagen3)
@@ -95,13 +103,17 @@ class ItemMuseo : AppCompatActivity() {
 
         lifecycleScope.launch(Dispatchers.IO){
             val favorito: Favorito
+            val favorito2: Favorito
             favorito = Favorito(id,codigo, url, title, intro)
-            //database.favoritos().verificar(id,codigo).codigo
-            database.favoritos().insertAll(favorito)
+            favorito2 = database.favoritos().verificar(id,codigo)
+            if(favorito2==null){
+                database.favoritos().insertAll(favorito)
+            }else{
 
+            }
 
         }
-        Toast.makeText(this, "Favorito Guardado", Toast.LENGTH_SHORT).show()
+
     }
 
     fun eliminar(id: Int, codigo: String){
@@ -110,5 +122,6 @@ class ItemMuseo : AppCompatActivity() {
             database.favoritos().eliminar(id, codigo)
         }
         Toast.makeText(this, "Favorito Eliminado", Toast.LENGTH_SHORT).show()
+        finish()
     }
 }

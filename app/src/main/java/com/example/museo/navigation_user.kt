@@ -72,6 +72,7 @@ class navigation_user : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.nav_home ->{
+                    replaceFragment(MuseoFragment() , it.title.toString(), persona)
                     val id_u: Int
                     if(pref.getName()==""){
                         id_u = persona.idUsuario
