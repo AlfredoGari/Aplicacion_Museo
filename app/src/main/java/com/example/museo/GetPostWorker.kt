@@ -12,6 +12,7 @@ class GetPostWorker(context: Context) {
 
     private lateinit var response: Call<MuseumItem>
 
+
     fun doWork(callback: ActionListenerCallback, codigo:String){
 
         listener = callback
@@ -39,6 +40,8 @@ class GetPostWorker(context: Context) {
             response = museumService.getMuseumItemLaPersistencia()
         }
 
+
+
         response.enqueue(object : Callback<MuseumItem> {
             override fun onResponse(call: Call<MuseumItem>, response: Response<MuseumItem>) {
                 response.body()?.let {
@@ -51,6 +54,8 @@ class GetPostWorker(context: Context) {
             }
 
         })
+
+
 
     }
 }
