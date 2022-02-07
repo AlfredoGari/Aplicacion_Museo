@@ -30,8 +30,6 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("id",id)
             startActivity(intent)
         }
-
-
     }
 
     private fun initScanner(){
@@ -62,8 +60,5 @@ class HomeActivity : AppCompatActivity() {
             super.onActivityResult(requestCode, resultCode, data)
 
         }
-
-
-
     }
 }

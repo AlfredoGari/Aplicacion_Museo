@@ -10,6 +10,7 @@
     <string name="info2">¿Olvidaste tu contraseña? Haz click aqui</string>
     <string name="remember">¿Recordar Usuario?</string>
     <string name="ru">¿Recordar Usuario?</string>
+    <string name="notfound">Usuario o Contraseña incorrectos</string>
 
     <!-- Strings pantalla de formulario -->
     <string name="form">FORMULARIO</string>

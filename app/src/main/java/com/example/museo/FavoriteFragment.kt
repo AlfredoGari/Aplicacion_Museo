@@ -52,7 +52,6 @@ class FavoriteFragment : Fragment() {
                 ini(listadoofav)
             }
         )
-
     }
 
     fun ini(listadoofav: ArrayList<ObjetoMuseo>){

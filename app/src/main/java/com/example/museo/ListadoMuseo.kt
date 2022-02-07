@@ -33,14 +33,8 @@ class ListadoMuseo : AppCompatActivity() {
         newRecyclerView.layoutManager = LinearLayoutManager(this)
         newRecyclerView.setHasFixedSize(true)
         callservice(this, id)
-  //      rv()
     }
 
- //   fun rv(){
- //       binding.rv.layoutManager = LinearLayoutManager(this)
- //       val adapter =MuseoAdapter(listadofav)
- //       binding.rv.adapter = adapter
- //   }
     private fun getdata(id: Int, ArrayList: ArrayList<ObjetoMuseo>){
      var adapter = MyAdapter(ArrayList)
      newRecyclerView.adapter = adapter
@@ -52,8 +46,6 @@ class ListadoMuseo : AppCompatActivity() {
              intent.putExtra("codigo",codigo)
              startActivity(intent)
          }
-
-
      })
   }
 
@@ -85,8 +77,6 @@ class ListadoMuseo : AppCompatActivity() {
             override fun onActionFailure(throwableError: Throwable) {
                 Log.i("Failure", throwableError.message.toString())
             }
-
         })
     }
-
 }

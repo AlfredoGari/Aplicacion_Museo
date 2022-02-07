@@ -30,6 +30,4 @@ class MuseoFragment : Fragment() {
             et.setText("Bienvenido/a " + usuario)
         }
     }
-
-
 }

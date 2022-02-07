@@ -40,8 +40,6 @@ class GetPostWorker(context: Context) {
             response = museumService.getMuseumItemLaPersistencia()
         }
 
-
-
         response.enqueue(object : Callback<MuseumItem> {
             override fun onResponse(call: Call<MuseumItem>, response: Response<MuseumItem>) {
                 response.body()?.let {
@@ -54,8 +52,5 @@ class GetPostWorker(context: Context) {
             }
 
         })
-
-
-
     }
 }

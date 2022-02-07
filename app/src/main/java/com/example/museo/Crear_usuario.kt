@@ -30,7 +30,6 @@ class Crear_usuario : AppCompatActivity() {
 
         })
 
-
         binding.crearusu.setOnClickListener{
             var usuar: String
             var contador: Int
@@ -46,9 +45,7 @@ class Crear_usuario : AppCompatActivity() {
                 verif = true
                 }else{
 
-
             }
-
                 contador = contador +1
             }
 
@@ -73,17 +70,7 @@ class Crear_usuario : AppCompatActivity() {
                     this@Crear_usuario.finish()
 
                  }
-
-
-
             }
-
-
-
-
         }
-
-
-
     }
 }

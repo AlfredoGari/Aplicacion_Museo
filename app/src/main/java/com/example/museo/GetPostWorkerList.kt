@@ -26,8 +26,6 @@ class GetPostWorkerList(context: Context) {
             override fun onFailure(call: Call<item_list>, t: Throwable) {
                 callback.onActionFailure(t)
             }
-
         })
     }
-
 }

@@ -41,7 +41,6 @@ class navigation_user : AppCompatActivity() {
         }else{
 
         }
-
         val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout)
         val navView : NavigationView = findViewById(R.id.nav_view)
 
@@ -52,21 +51,11 @@ class navigation_user : AppCompatActivity() {
         val abrir: Intent =Intent(this, MainActivity::class.java)
         navUsername.text = persona.usua.toString()
         navcorreo.text = persona.ema.toString()
-
-
-
-
-
-
         toogle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toogle)
         toogle.syncState()
-
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         replaceFragment(MuseoFragment() , "Museo", persona)
-
         navView.setNavigationItemSelectedListener {
 
             when(it.itemId){
@@ -102,14 +91,9 @@ class navigation_user : AppCompatActivity() {
                     replaceFragment(EditUsuarioFragment(), it.title.toString(), persona)
                 }
                 R.id.nav_museo-> replaceFragment(MuseoFragment(), it.title.toString(), persona)
-
-
             }
             true
         }
-
-        
-
     }
 
     private fun replaceFragment(fragment: Fragment, title: String, persona: Usuario){
@@ -134,7 +118,4 @@ class navigation_user : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-
-
-
 }

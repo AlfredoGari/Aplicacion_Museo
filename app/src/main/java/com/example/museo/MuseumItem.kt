@@ -59,5 +59,4 @@ data class ExternalLinks(
 
     @SerializedName("name")
     val name: String
-
 )

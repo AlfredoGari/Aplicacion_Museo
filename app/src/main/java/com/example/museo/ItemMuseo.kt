@@ -91,10 +91,7 @@ class ItemMuseo : AppCompatActivity() {
                 override fun onActionFailure(throwableError: Throwable) {
                     Log.i("Failure", throwableError.message.toString())
                 }
-
             }, codigo)
-
-
 
     }
     fun guardar(id: Int, codigo: String, url: String, title: String, intro:String){
@@ -112,9 +109,7 @@ class ItemMuseo : AppCompatActivity() {
             }else{
 
             }
-
         }
-
     }
 
     fun eliminar(id: Int, codigo: String){

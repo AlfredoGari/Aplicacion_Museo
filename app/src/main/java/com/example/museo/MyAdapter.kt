@@ -50,8 +50,6 @@ class MyAdapter(private val newlist: ArrayList<ObjetoMuseo>) : RecyclerView.Adap
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition, codigo.text.toString())
             }
-
         }
-
     }
 }

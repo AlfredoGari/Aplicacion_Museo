@@ -49,14 +49,6 @@ class CambiarContraFragment: Fragment() {
 
                 }
             }
-
-
-
-
         }
     }
-
-
-
-
 }

@@ -22,8 +22,6 @@ class MuseoAdapter(val museo:List<ObjetoMuseo>):RecyclerView.Adapter<MuseoAdapte
                 Toast.makeText(view.context, "${museo.nameOnjeto}", Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MuseoHolder {

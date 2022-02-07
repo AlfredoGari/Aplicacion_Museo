@@ -68,8 +68,5 @@ class EditUsuarioFragment : Fragment() {
             et1.setText(user.ema)
             et2.setText(user.contr)
         }
-
     }
-
-
 }

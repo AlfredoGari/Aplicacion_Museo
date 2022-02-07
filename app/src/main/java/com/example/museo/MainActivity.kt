@@ -33,9 +33,6 @@ class MainActivity : AppCompatActivity() {
             listaUsuarios = it
 
         })
-
-
-
         crear = binding.label1
         crear2 = binding.label
 
@@ -53,6 +50,8 @@ class MainActivity : AppCompatActivity() {
             var contador: Int
             var usuar: String
             var contra: String
+            var ver: Int
+            ver = 0
 
             contador = 0
             for(i in listaUsuarios){
@@ -66,20 +65,20 @@ class MainActivity : AppCompatActivity() {
                     accessToDetail(persona)
                     val intent:Intent = Intent(this, navigation_user::class.java)
                     intent.putExtra("dato",persona)
+                    ver = 1
                     startActivity(intent)
                     finish()
                 }else{
 
                 }
-
                 contador = contador +1
             }
-
-
-
-
+            if(ver==0){
+                Toast.makeText(this, R.string.notfound, Toast.LENGTH_SHORT ).show();
+            }
         }
     }
+
     fun accessToDetail(persona: Usuario){
         if(binding.checkBox.isChecked){
             pref.saveName(binding.inputlayout2.text.toString())
@@ -89,11 +88,13 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
     fun checkuser(){
         if(pref.getName().isNotEmpty()){
             gotoActivity()
         }
     }
+
     fun gotoActivity(){
         val intent:Intent = Intent(this, navigation_user::class.java)
         startActivity(intent)
