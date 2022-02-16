@@ -37,6 +37,7 @@ class Crear_usuario : AppCompatActivity() {
             verif = false
             contador = 0
 
+
             for(i in listaUsuarios){
 
                 usuar = listaUsuarios[contador].usua
