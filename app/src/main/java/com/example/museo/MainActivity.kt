@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.room.Database
 import com.example.museo.UserPersist.Companion.pref
 import com.example.museo.databinding.ActivitySplashBinding
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         checkuser()
+
+        val analytics = FirebaseAnalytics.getInstance(this)
+        val bundle = Bundle()
+        bundle.putString("message", "Integracion firebase")
+        analytics.logEvent("InitScreen", bundle)
 
         var listaUsuarios = emptyList<Usuario>()
 
