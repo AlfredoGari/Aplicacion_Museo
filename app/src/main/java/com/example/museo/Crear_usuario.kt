@@ -59,6 +59,9 @@ class Crear_usuario : AppCompatActivity() {
 
             }else{
 
+
+                validar()
+
                 val user = binding.inputlayout2.text.toString()
                 val correo = binding.inputlayout3.text.toString()
                 val contra = binding.inputlayout.text.toString()
@@ -73,5 +76,8 @@ class Crear_usuario : AppCompatActivity() {
                  }
             }
         }
+    }
+    private fun validar(){
+
     }
 }

@@ -15,6 +15,8 @@ import com.example.museo.databinding.ActivityCrearUsuarioBinding
 import com.example.museo.databinding.ActivityNavigationUserBinding
 import com.example.museo.databinding.ActivitySplashBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.iid.FirebaseInstanceIdReceiver
+import com.google.firebase.iid.internal.FirebaseInstanceIdInternal
 import com.google.zxing.integration.android.IntentIntegrator
 
 class navigation_user : AppCompatActivity() {
@@ -25,6 +27,7 @@ class navigation_user : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigationUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         val objetoIntent: Intent = intent
         var persona: Usuario
@@ -118,4 +121,6 @@ class navigation_user : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
+
+
 }
