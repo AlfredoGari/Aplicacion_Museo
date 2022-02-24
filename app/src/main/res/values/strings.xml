@@ -22,6 +22,10 @@
     <string name="crearusu">Crear Usuario</string>
     <string name="existe">Nombre de usuario ocupado, porfavor elija otro</string>
     <string name="miss">Campo/s faltante/s</string>
+    <string name="e1">El nombre de usuario debe contener por lo menos 6 caracteres</string>
+    <string name="e2">El mail ingresado no es valido</string>
+    <string name="e3">La contraseña debe contener por lo menos 8 caracteres</string>
+    <string name="bn">Usuario creado exitosamente</string>
     <!-- Strings menu -->
     <string name="inicio">Inicio</string>
     <string name="fav">Favoritos</string>
@@ -64,5 +68,16 @@
     <string name="favorite">Agregar a Favoritos</string>
     <string name="eliminar">Eliminar de Favoritos</string>
 
+    <!-- Strings modificar datos usuarios -->
+    <string name="nm">Aun no se permite cambiar el nombre de Usuario</string>
+    <string name="cg">Cambios guardados con exito</string>
+    <string name="nmm">El mail no puede cambiarse por el momento</string>
+    <string name="nmv">El mail no puede cambiarse por el momento</string>
+    <string name="nc">La contraseña no puede ser nulo</string>
+    <string name="ncc">La contraseña debe contener por lo menos 8 caracteres</string>
+
+    <!-- Strings de un Item -->
+    <string name="deletefav">Favorito eliminado</string>
+    <string name="savefavs">Favorito guardado</string>
 
 </resources>

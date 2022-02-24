@@ -59,14 +59,15 @@ class Crear_usuario : AppCompatActivity() {
 
             }else{
 
-
-                validar()
-
                 val user = binding.inputlayout2.text.toString()
                 val correo = binding.inputlayout3.text.toString()
                 val contra = binding.inputlayout.text.toString()
-                verif=true
+                verif = validar(user, correo, contra)
                 val userfinal = Usuario(user,contra,correo)
+
+                if(verif){
+
+                    Toast.makeText(this, R.string.bn, Toast.LENGTH_SHORT ).show();
 
                 CoroutineScope(Dispatchers.IO).launch {
                     database.usuarios().insertAll(userfinal)
@@ -74,10 +75,30 @@ class Crear_usuario : AppCompatActivity() {
                     this@Crear_usuario.finish()
 
                  }
+
+                }
+
+
             }
         }
     }
-    private fun validar(){
+    private fun validar(user: String, correo:String, contra:String): Boolean{
+        var verr:Boolean
+        verr=true
+            if(user.length < 5){
+                verr=false
+                Toast.makeText(this, R.string.e1, Toast.LENGTH_SHORT ).show();
+            }
+            if(correo.contains("@")){
+            }else{
+                verr=false
+                Toast.makeText(this, R.string.e2, Toast.LENGTH_SHORT ).show();
+            }
+            if(contra.length < 8){
+                verr=false
+                Toast.makeText(this, R.string.e3, Toast.LENGTH_SHORT ).show();
+            }
 
+        return verr
     }
 }

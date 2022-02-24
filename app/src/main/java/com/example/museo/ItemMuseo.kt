@@ -110,6 +110,8 @@ class ItemMuseo : AppCompatActivity() {
 
             }
         }
+        Toast.makeText(this, R.string.savefavs, Toast.LENGTH_SHORT).show()
+
     }
 
     fun eliminar(id: Int, codigo: String){
@@ -117,7 +119,7 @@ class ItemMuseo : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO){
             database.favoritos().eliminar(id, codigo)
         }
-        Toast.makeText(this, "Favorito Eliminado", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, R.string.deletefav, Toast.LENGTH_SHORT).show()
         finish()
     }
 }
